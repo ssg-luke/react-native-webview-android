@@ -185,6 +185,11 @@ public class RNWebViewManager extends SimpleViewManager<RNWebView> {
         view.getSettings().setUseWideViewPort(useWideViewPort);
     }
 
+    @ReactProp(name = "debuggingEnabled", defaultBoolean = false)
+    public void setWebContentsDebuggingEnabled(RNWebView view, boolean debuggingEnabled) {
+        view.setWebContentsDebuggingEnabled(debuggingEnabled);
+    }
+
     @Override
     public @Nullable
     Map<String, Integer> getCommandsMap() {
