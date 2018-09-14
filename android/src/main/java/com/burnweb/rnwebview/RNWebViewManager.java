@@ -190,6 +190,11 @@ public class RNWebViewManager extends SimpleViewManager<RNWebView> {
         view.setWebContentsDebuggingEnabled(debuggingEnabled);
     }
 
+    @ReactProp(name = "userAgent")
+    public void setUserAgentString(RNWebView view, @Nullable String userAgent) {
+        view.getSettings().setUserAgentString(userAgent);
+    }
+
     @Override
     public @Nullable
     Map<String, Integer> getCommandsMap() {
