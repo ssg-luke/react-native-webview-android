@@ -160,6 +160,7 @@ var WebViewAndroidExample = React.createClass({
           useWideViewPort={false}
           debuggingEnabled={false} // Allows for inspection of WebView with Chrome
           userAgent="customUserAgent"
+          mediaPlaybackRequiresUserGesture={true}
           injectedJavaScript={this.javascriptToInject()}
           onShouldStartLoadWithRequest={this.onShouldStartLoadWithRequest}
           onNavigationStateChange={this.onNavigationStateChange}

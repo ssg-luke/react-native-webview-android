@@ -195,6 +195,11 @@ public class RNWebViewManager extends SimpleViewManager<RNWebView> {
         view.getSettings().setUserAgentString(userAgent);
     }
 
+    @ReactProp(name = "mediaPlaybackRequiresUserGesture", defaultBoolean = true)
+    public void setMediaPlaybackRequiresUserGesture(RNWebView view, boolean required) {
+        view.getSettings().setMediaPlaybackRequiresUserGesture(required);
+    }
+
     @Override
     public @Nullable
     Map<String, Integer> getCommandsMap() {
