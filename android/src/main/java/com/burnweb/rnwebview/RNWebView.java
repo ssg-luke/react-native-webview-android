@@ -112,6 +112,18 @@ class RNWebView extends WebView implements LifecycleEventListener {
             this.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
         }
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            // chromium, enable hardware acceleration
+            this.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+        } else {
+            // older android version, disable hardware acceleration
+            this.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+        }
+
+        this.getSettings().setRenderPriority(RenderPriority.HIGH);
+
+        this.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
+
         this.setWebViewClient(new EventWebClient());
         this.setWebChromeClient(getCustomClient());
 
